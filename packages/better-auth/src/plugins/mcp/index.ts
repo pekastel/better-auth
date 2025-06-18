@@ -795,7 +795,7 @@ export const mcp = (options: MCPOptions) => {
 
 					// Determine client type based on auth method
 					const clientType = (body.token_endpoint_auth_method === "none") ? "public" : "web";
-					const finalClientSecret = (clientType === "public") ? null : clientSecret;
+					const finalClientSecret = (clientType === "public") ? "" : clientSecret;
 
 					await ctx.context.adapter.create({
 						model: modelName.oauthClient,
